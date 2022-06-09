@@ -3,6 +3,7 @@ package com.epicdevler.practice.mediaplayerimpl
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
+import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.material3.Button
 import androidx.compose.material3.MaterialTheme
@@ -33,8 +34,10 @@ class MainActivity : ComponentActivity() {
 
 @Composable
 fun Player() {
-    Button(onClick = { startPlayer() }) {
-        Text(text = "Play")
+    Column {
+        Button(onClick = { startPlayer() }) {
+            Text(text = "Play")
+        }
     }
 }
 
@@ -42,7 +45,7 @@ fun startPlayer() {
 
 }
 
-@Preview(showBackground = true)
+@Preview(showBackground = true, showSystemUi = true)
 @Composable
 fun DefaultPreview() {
     MediaPlayerImplTheme {
